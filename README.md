@@ -3,9 +3,10 @@
 ### *Сайт с карточками интересных мест*
 
 ## Обзор технических приемов
-
-* Flex
-* Grid Layout
-* Media Queries
-* Adaptive UI
+* HMTL5
+* CSS3:
+- * Flex
+- * Grid Layout
+- * Media Queries
+- * Adaptive UI
 * UX
