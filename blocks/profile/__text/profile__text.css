@@ -1,0 +1,5 @@
+.profile__text {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}

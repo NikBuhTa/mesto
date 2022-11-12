@@ -24,20 +24,105 @@
         </svg>    
     </header>
     <main class="main">
-        <article class="profile">
+        <section class="profile">
             <div class="profile__avatar"></div>
-            <div class="profile__info">
-                <h1 class="profile__name">Жак-Ив Кусто</h1>
-            </div>
-            <button class="button"></button>
-        </article>
-        <ul class="cards">
-            <li class="card">
-                    <img src="#" class="card__image">
-                    <h2 class="card__name">Карачевск</h2>
-            </li>
-        </ul>
+            <article class="profile__info">
+                <div class="profile__text">
+                    <h1 class="profile__name">Жак-Ив Кусто</h1>
+                    <p class="profile__status">Исследователь океана</p>
+                </div>
+                <button class="profile__button-edit">
+                    <svg class="profile__button-editImage" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10 1.32827L2.60377 8.7666L1.28302 7.41936L8.66038 0L10 1.32827ZM0 10L1.96226 9.41177L0.584906 8.08349L0 10Z" fill="white"/>
+                        </svg>                        
+                </button>
+            </article>
+            <button class="profile__button-add">
+                <svg class="profile__button-addImage" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M22 9.77778H12.2222V0H9.77778V9.77778H0V12.2222H9.77778V22H12.2222V12.2222H22V9.77778Z" fill="white"/>
+                    </svg>
+                    
+            </button>
+        </section>
+        <section>
+            <ul class="cards">
+                <li class="card">
+                    <img src="./images/card__karachaevsk.jpg" class="card__image" alt="вид из Карачаевска">
+                    <div class="card__info">
+                        <h2 class="card__name">Карачаевск</h2>
+                        <label class="card__label" for="scene-number-one">
+                            <input class="card__checkbox" id="scene-number-one" type="checkbox">
+                            <span class="card__checkbox-visible"></span>
+                        </label>
+                    </div>
+                </li>
+                <li class="card">
+                    <img src="./images/card__elbrus-1.jpg" class="card__image" alt="Эльбрус">
+                    <div class="card__info">
+                        <h2 class="card__name">Гора Эльбрус</h2>
+                        <label class="card__label" for="scene-number-two">
+                            <input class="card__checkbox" id="scene-number-two" type="checkbox">
+                            <span class="card__checkbox-visible"></span>
+                        </label>
+                    </div>
+                </li>
+                <li class="card">
+                    <img src="./images/card__dombay-1.jpg" class="card__image" alt="Домбай">
+                    <div class="card__info">
+                        <h2 class="card__name">Домбай</h2>
+                        <label class="card__label" for="scene-number-three">
+                            <input class="card__checkbox" id="scene-number-three" type="checkbox">
+                            <span class="card__checkbox-visible"></span>
+                        </label>
+                    </div>
+                </li>
+                <li class="card">
+                    <img src="./images/card__elbrus-2.jpg" class="card__image" alt="Эльбрус">
+                    <div class="card__info">
+                        <h2 class="card__name">Гора Эльбрус</h2>
+                        <label class="card__label" for="scene-number-four">
+                            <input class="card__checkbox" id="scene-number-four" type="checkbox">
+                            <span class="card__checkbox-visible"></span>
+                        </label>
+                    </div>
+                </li>
+                <li class="card">
+                    <img src="./images/card__dombay-2.jpg" class="card__image" alt="Домбай">
+                    <div class="card__info">
+                        <h2 class="card__name">Домбай</h2>
+                        <label class="card__label" for="scene-number-five">
+                            <input class="card__checkbox" id="scene-number-five" type="checkbox">
+                            <span class="card__checkbox-visible"></span>
+                        </label>
+                    </div>
+                </li>
+                <li class="card">
+                    <img src="./images/card__kar-cher.jpg" class="card__image" alt="Карачаево-Черкесская Республика">
+                    <div class="card__info">
+                        <h2 class="card__name">Карачаево-Черкесская Республика</h2>
+                        <label class="card__label" for="scene-number-six">
+                            <input class="card__checkbox" id="scene-number-six" type="checkbox">
+                            <span class="card__checkbox-visible"></span>
+                        </label>
+                    </div>
+                </li>
+            </ul>
+        </section>
     </main>
-    <footer class="footer"></footer>
+    <footer class="footer">
+        <p class="footer__text">&copy; 2022 Mesto Russia</p>
+    </footer>
+    <section class="popup">
+        <div class="popup__container">
+            <button class="popup__button"><span class="popup__button-image">&times;</span></button>
+            <form class="form">
+                <h2 class="form__title">Редактировать профиль</h2>
+                <input class="form__input form__input_class_name" type="text" value="Жак-Ив Кусто">
+                <input class="form__input form__input_class_status" type="text" value="Исследователь океана">
+                <button class="form__button" type="submit">Сохранить</button>
+            </form>
+        </div>
+    </section>
+    <script src="./scripts/index.js"></script>
 </body>
 </html>
