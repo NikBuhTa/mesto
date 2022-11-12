@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="ru">
-<head>
+<head> <!--КНОПКА POPUP CLOSE-->
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,18 +15,14 @@
     <main class="main">
         <section class="profile">
             <div class="profile__avatar"></div>
-            <article class="profile__info">
+            <div class="profile__info">
                 <div class="profile__text">
                     <h1 class="profile__name">Жак-Ив Кусто</h1>
                     <p class="profile__status">Исследователь океана</p>
                 </div>
-                <button class="profile__button-edit">
-                    <img class="profile__button-editImage" src="./images/profile_image-1.svg" alt="карандаш">
-                </button>
-            </article>
-            <button class="profile__button-add">
-                <img class="profile__button-addImage" src="./images/profile-image-2.svg" alt="плюсик">
-            </button>
+                <button type="button" class="profile__button-edit"></button>
+            </div>
+            <button type="button" class="profile__button-add"></button>
         </section>
         <section>
             <ul class="cards">
@@ -34,60 +30,42 @@
                     <img src="./images/card__karachaevsk.jpg" class="card__image" alt="вид из Карачаевска">
                     <div class="card__info">
                         <h2 class="card__name">Карачаевск</h2>
-                        <label class="card__label" for="scene-number-one">
-                            <input class="card__checkbox" id="scene-number-one" type="checkbox">
-                            <span class="card__checkbox-visible"></span>
-                        </label>
+                        <button class="card__button" name="like"></button>
                     </div>
                 </li>
                 <li class="card">
                     <img src="./images/card__elbrus-1.jpg" class="card__image" alt="Эльбрус">
                     <div class="card__info">
                         <h2 class="card__name">Гора Эльбрус</h2>
-                        <label class="card__label" for="scene-number-two">
-                            <input class="card__checkbox" id="scene-number-two" type="checkbox">
-                            <span class="card__checkbox-visible"></span>
-                        </label>
+                        <button class="card__button" name="like"></button>
                     </div>
                 </li>
                 <li class="card">
                     <img src="./images/card__dombay-1.jpg" class="card__image" alt="Домбай">
                     <div class="card__info">
                         <h2 class="card__name">Домбай</h2>
-                        <label class="card__label" for="scene-number-three">
-                            <input class="card__checkbox" id="scene-number-three" type="checkbox">
-                            <span class="card__checkbox-visible"></span>
-                        </label>
+                        <button class="card__button" name="like"></button>
                     </div>
                 </li>
                 <li class="card">
                     <img src="./images/card__elbrus-2.jpg" class="card__image" alt="Эльбрус">
                     <div class="card__info">
                         <h2 class="card__name">Гора Эльбрус</h2>
-                        <label class="card__label" for="scene-number-four">
-                            <input class="card__checkbox" id="scene-number-four" type="checkbox">
-                            <span class="card__checkbox-visible"></span>
-                        </label>
+                        <button class="card__button" name="like"></button>
                     </div>
                 </li>
                 <li class="card">
                     <img src="./images/card__dombay-2.jpg" class="card__image" alt="Домбай">
                     <div class="card__info">
                         <h2 class="card__name">Домбай</h2>
-                        <label class="card__label" for="scene-number-five">
-                            <input class="card__checkbox" id="scene-number-five" type="checkbox">
-                            <span class="card__checkbox-visible"></span>
-                        </label>
+                        <button class="card__button" name="like"></button>
                     </div>
                 </li>
                 <li class="card">
                     <img src="./images/card__kar-cher.jpg" class="card__image" alt="Карачаево-Черкесская Республика">
                     <div class="card__info">
                         <h2 class="card__name">Карачаево-Черкесская Республика</h2>
-                        <label class="card__label" for="scene-number-six">
-                            <input class="card__checkbox" id="scene-number-six" type="checkbox">
-                            <span class="card__checkbox-visible"></span>
-                        </label>
+                        <button class="card__button" name="like"></button>
                     </div>
                 </li>
             </ul>
@@ -97,12 +75,14 @@
         <p class="footer__text">&copy; 2022 Mesto Russia</p>
     </footer>
     <section class="popup">
+        <div class="popup__button-place">
+            <button type="button" class="popup__button"></button>
+        </div>
         <div class="popup__container">
-            <button class="popup__button"><span class="popup__button-image">&times;</span></button>
-            <form class="form">
+            <form class="form" name="about">
                 <h2 class="form__title">Редактировать профиль</h2>
-                <input class="form__input form__input_class_name" type="text" value="Жак-Ив Кусто">
-                <input class="form__input form__input_class_status" type="text" value="Исследователь океана">
+                <input class="form__input form__input_class_name" type="text" name="name">
+                <input class="form__input form__input_class_status" type="text" name="status">
                 <button class="form__button" type="submit">Сохранить</button>
             </form>
         </div>

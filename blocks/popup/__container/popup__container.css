@@ -1,16 +1,12 @@
 .popup__container {
     box-sizing: border-box;
-    max-width: 470px;
+    max-width: 430px;
     width: 100%;
     display: flex;
-    flex-direction: column;
-    margin: 155px 0 0;
-    margin-left: calc((100% - 470px)/2 + 20px);
 }
 
 @media screen and (max-width: 580px) {
     .popup__container {
         max-width: 282px;
-        margin: 87px auto;
     }
 }

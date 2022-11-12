@@ -2,11 +2,11 @@
     box-sizing: border-box;
     max-width: 880px;
     width: 100%;
-    min-height: 77px;
-    margin: 45px auto 41px;
+    min-height: 74px;
+    margin: 45px auto 40px;
     display: flex;
     justify-content: baseline;
-    border-bottom: 1px solid rgb(255, 255, 255, 0.2);
+    border-bottom: 1px solid rgb(84, 84, 84, .7);
 }
 
 @media screen and (max-width: 879px) {

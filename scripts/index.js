@@ -1,39 +1,45 @@
-/* open/close popup */
 const popupElement = document.querySelector('.popup');
 const popupOpenVisibility = document.querySelector('.profile__button-edit');
 const popupCloseVisibility = popupElement.querySelector('.popup__button');
+const formElement = popupElement.querySelector('.form');
 
-/* function popupOpen () {
-    popupElement.classList.toggle('popup_open');
-} */
+let nameInput = formElement.querySelector('.form__input_class_name');
+let jobInput = formElement.querySelector('.form__input_class_status');
 
+let profileName = document.querySelector('.profile__name');
+let profileJob = document.querySelector('.profile__status');
+
+/* like button */
+let cardButton = document.querySelectorAll('.card__button');
+
+for (let i = 0 ; i < cardButton.length; i ++) {
+    cardButton[i].addEventListener('click', function() {
+        if (cardButton[i].className.length < 13) {
+            cardButton[i].classList.add('card__button_active');
+        } else {
+            cardButton[i].classList.remove('card__button_active');     
+        }
+     });
+ }
+
+/* open/close popup */
 popupOpenVisibility.addEventListener('click', function() {
-    popupElement.classList.toggle('popup_open');
+    popupElement.classList.add('popup_open');
+    nameInput.value = profileName.textContent;
+    jobInput.value = profileJob.textContent;
 });
 
 popupCloseVisibility.addEventListener('click', function() {
-    popupElement.classList.toggle('popup_open');
+    popupElement.classList.remove('popup_open');
 });
 
 /* submit */
-const formElement = popupElement.querySelector('.form');
 
 function formSubmitHandler(event) {
 	event.preventDefault();
-	let nameInput = formElement.querySelector('.form__input_class_name');
-	let jobInput = formElement.querySelector('.form__input_class_status');
-
-    let nameValue = nameInput.value;
-    let jobValue = jobInput.value;
-	
-    let profileName = document.querySelector('.profile__name');
-    let profileJob = document.querySelector('.profile__status');
-
-    profileName.textContent = nameValue;
-    profileJob.textContent = jobValue;
-    popupElement.classList.toggle('popup_open')
+    profileName.textContent = nameInput.value;
+    profileJob.textContent = jobInput.value;
+    popupElement.classList.remove('popup_open');
 }
 
-// Прикрепляем обработчик к форме:
-// он будет следить за событием “submit” - «отправка»
 formElement.addEventListener('submit', formSubmitHandler);

@@ -2,16 +2,20 @@
     box-sizing: border-box;
     width: 24px;
     height: 24px;
+    padding: 0;
     background: black;
-    margin-top: 15px;
-    padding: 2px;
+    background-image: url('../../../images/profile_image-1.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: auto;
     border: 1px solid white;
+    margin-bottom: 25px;
     cursor: pointer;
     transition: 0.3s;
 }
 
 .profile__button-edit:hover {
-    opacity: 0.5;
+    opacity: 0.6;
 }
 
 @media screen and (max-width: 879px) {
