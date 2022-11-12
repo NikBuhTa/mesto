@@ -13,5 +13,5 @@
  * Adaptive UI
 * UX
 
-## Ссылка на сайт
- > [Тык](https://nikbuhta.github.io/mesto/)
+### Ссылка на сайт
+[Тык](https://nikbuhta.github.io/mesto/)
