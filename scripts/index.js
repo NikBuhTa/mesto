@@ -9,7 +9,7 @@ let jobInput = formElement.querySelector('.form__input_class_status');
 let profileName = document.querySelector('.profile__name');
 let profileJob = document.querySelector('.profile__status');
 
-/* like button */
+/* like button */ /*
 let cardButton = document.querySelectorAll('.card__button');
 
 for (let i = 0 ; i < cardButton.length; i ++) {
@@ -20,7 +20,7 @@ for (let i = 0 ; i < cardButton.length; i ++) {
             cardButton[i].classList.remove('card__button_active');     
         }
      });
- }
+ } */
 
 /* open/close popup */
 popupOpenVisibility.addEventListener('click', function() {
