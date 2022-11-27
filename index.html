@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="./pages/index.css">
     <link rel="icon" href="./images/icon.png">
     <title>Mesto</title>
+    <script defer src="./scripts/index.js" type="module"></script>
 </head>
 <body class="page">
     <header class="header">
@@ -20,9 +21,9 @@
                     <h1 class="profile__name">Жак-Ив Кусто</h1>
                     <p class="profile__status">Исследователь океана</p>
                 </div>
-                <button type="button" class="profile__button-edit"></button>
+                <button type="button" class="profile__button-edit" aria-label="редактировать"></button>
             </div>
-            <button type="button" class="profile__button-add"></button>
+            <button type="button" class="profile__button-add" aria-label="добавить"></button>
         </section>
         <section>
             <ul class="cards">
@@ -35,7 +36,7 @@
     </footer>
     <section class="popup">
         <div class="popup__button-place">
-            <button type="button" class="popup__button"></button>
+            <button type="button" class="popup__button" aria-label="закрыть"></button>
         </div>
         <div class="popup__container">
             <form class="form" name="about">
@@ -48,7 +49,7 @@
     </section>
     <section class="popup">
         <div class="popup__button-place">
-            <button type="button" class="popup__button"></button>
+            <button type="button" class="popup__button" aria-label="закрыть"></button>
         </div>
         <div class="popup__container">
             <form class="form" name="information">
@@ -62,10 +63,10 @@
     <template id="card">
         <li class="card">
             <img src="#" class="card__image" alt="#">
-            <button type="button" class="card__delete-button" name="delete"></button>
+            <button type="button" class="card__delete-button" name="delete" aria-label="удалить"></button>
             <div class="card__info">
                 <h2 class="card__name"></h2>
-                <button type="button" class="card__button" name="like"></button>
+                <button type="button" class="card__button" name="like" aria-label="лайк"></button>
             </div>
         </li>
     </template>
@@ -73,13 +74,12 @@
         <section class="popup popup_opacity_image">
             <figure class="popup__image-container">
                 <div class="popup__button-image">
-                    <button type="button" class="popup__button"></button>
+                    <button type="button" class="popup__button" aria-label="закрыть"></button>
                 </div>
                 <img class="popup__image" src="#">
                 <figcaption class="popup__subtitle"></figcaption>
             </figure>
         </section>
     </template>
-    <script src="./scripts/index.js" type="module"></script>
 </body>
 </html>
