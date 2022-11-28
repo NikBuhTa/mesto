@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="./pages/index.css">
     <link rel="icon" href="./images/icon.png">
     <title>Mesto</title>
-    <script defer src="./scripts/index.js" type="module"></script>
+    <script src="./scripts/index.js" type="module"></script>
 </head>
 <body class="page">
     <header class="header">
@@ -34,7 +34,7 @@
     <footer class="footer">
         <p class="footer__text">&copy; 2022 Mesto Russia</p>
     </footer>
-    <section class="popup">
+    <section class="popup" id="aboutProfile">
         <div class="popup__button-place">
             <button type="button" class="popup__button" aria-label="закрыть"></button>
         </div>
@@ -47,18 +47,27 @@
             </form>
         </div>
     </section>
-    <section class="popup">
+    <section class="popup" id="newCard">
         <div class="popup__button-place">
             <button type="button" class="popup__button" aria-label="закрыть"></button>
         </div>
         <div class="popup__container">
             <form class="form" name="information">
                 <h2 class="form__title">Новое место</h2>
-                <input class="form__input" type="text" name="title" placeholder="Название">
-                <input class="form__input" type="text" name="address" placeholder="Ссылка на картинку">
+                <input class="form__input" type="text" name="title" placeholder="Название" required>
+                <input class="form__input" type="url" name="url" placeholder="Ссылка на картинку" required>
                 <button class="form__button" type="submit">Сохранить</button>
             </form>
         </div>
+    </section>
+    <section class="popup popup_opacity_image" id="fullCardImage">
+        <figure class="popup__image-container">
+            <div class="popup__button-image">
+                <button type="button" class="popup__button" aria-label="закрыть"></button>
+            </div>
+            <img class="popup__image" src="#" alt="#">
+            <figcaption class="popup__subtitle"></figcaption>
+        </figure>
     </section>
     <template id="card">
         <li class="card">
@@ -69,17 +78,6 @@
                 <button type="button" class="card__button" name="like" aria-label="лайк"></button>
             </div>
         </li>
-    </template>
-    <template id="fullImage">
-        <section class="popup popup_opacity_image">
-            <figure class="popup__image-container">
-                <div class="popup__button-image">
-                    <button type="button" class="popup__button" aria-label="закрыть"></button>
-                </div>
-                <img class="popup__image" src="#">
-                <figcaption class="popup__subtitle"></figcaption>
-            </figure>
-        </section>
     </template>
 </body>
 </html>
