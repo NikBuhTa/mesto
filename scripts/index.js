@@ -7,11 +7,33 @@ const cardsList = document.querySelector('.cards');
 //Функции закрытия и открытия попапов
 function openPopup(element) {
     element.classList.add('popup_open');
+    eventListenerPressButtonEsc();
+    element.addEventListener('click', handlerClickOverlay);
 };
 
 function closePopup(element) {
     element.classList.remove('popup_open');
+    window.removeEventListener('keydown', closeHandlerButton)
 }
+
+//Закрытие через клик по оверлею
+const handlerClickOverlay = (evt) => {
+    if (evt.target === evt.currentTarget) {
+        closePopup(document.querySelector('.popup_open'));
+    }
+}
+
+//закрытие через ESC
+const closeHandlerButton = (item) => {
+    if (item.key === 'Escape') {
+        closePopup(document.querySelector('.popup_open'));
+    };
+};
+
+const eventListenerPressButtonEsc = () => {
+    window.addEventListener('keydown', closeHandlerButton)
+};
+//
 
 //Заполнение попапа с картинкой из блока card
 function fillBigImagePopup(item) {
@@ -33,16 +55,16 @@ function createCard(item) {
 
     templateCardDelButton.addEventListener('click', function(e) {
         templateCardElement.remove();
-    })
+    });
 
     templateCardLikeButton.addEventListener('click', function(e) { //функция лайка/дизлайка
         e.target.classList.toggle('card__button_active');
-    })
+    });
 
     templateCardImage.addEventListener('click', function() {
         fillBigImagePopup(item);
         openPopup(popupElementImage);
-    })
+    });
 
     templateCardTitle.textContent = item.name;
     templateCardImage.src = item.link;
@@ -73,15 +95,20 @@ const nameInput = popupElementEdit.querySelector('.form__input_class_name');
 const statusInput = popupElementEdit.querySelector('.form__input_class_status');
 //попап с картинкой \закрытие
 const cardImageCloseButton = popupElementImage.querySelector('.popup__button');
+
 cardImageCloseButton.addEventListener('click', function() {
     closePopup(popupElementImage);
 });
 
+const fillEditForm = () => {
+    nameInput.value = profileName.textContent;
+    statusInput.value = profileStatus.textContent;
+}
+
 //Открытие
 openEditFormButton.addEventListener('click', function() {
     openPopup(popupElementEdit);
-    nameInput.value = profileName.textContent;
-    statusInput.value = profileStatus.textContent;
+    fillEditForm();
 });
 //Закрытие
 closeEditFormButton.addEventListener('click', function() {
@@ -131,3 +158,5 @@ cardForm.addEventListener('submit', function(e) {
 
 //Оторбажаем карточки из массива.
 initialCards.forEach(renderCard);
+//заполняем поля в попапа для того, чтобы при первоначальной загрузке страницы была активна submit 
+fillEditForm();

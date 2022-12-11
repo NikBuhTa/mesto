@@ -8,6 +8,7 @@
     <link rel="icon" href="./images/icon.png">
     <title>Mesto</title>
     <script src="./scripts/index.js" type="module"></script>
+    <script defer src="./scripts/validate.js"></script>
 </head>
 <body class="page">
     <header class="header">
@@ -41,8 +42,14 @@
         <div class="popup__container">
             <form class="form" name="about">
                 <h2 class="form__title">Редактрировать профиль</h2>
-                <input class="form__input form__input_class_name" type="text" name="name" placeholder="Имя">
-                <input class="form__input form__input_class_status" type="text" name="status" placeholder="Статус">
+                <label class="form__label form__label_position_top">
+                    <input class="form__input form__input_class_name" type="text" id="name-input" name="name" placeholder="Имя" required minlength="2" maxlength="40">
+                    <span class="form__input-error name-input-error"></span>
+                </label>
+                <label class="form__label">
+                    <input class="form__input form__input_class_status" type="text" id="status-input" name="status" placeholder="Статус" required minlength="2" maxlength="200">
+                    <span class="form__input-error status-input-error"></span>
+                </label>
                 <button class="form__button" type="submit">Сохранить</button>
             </form>
         </div>
@@ -54,8 +61,14 @@
         <div class="popup__container">
             <form class="form" name="information">
                 <h2 class="form__title">Новое место</h2>
-                <input class="form__input" type="text" name="title" placeholder="Название" required>
-                <input class="form__input" type="url" name="url" placeholder="Ссылка на картинку" required>
+                <label class="form__label form__label_position_top">
+                    <input class="form__input" type="text" id="title-input" name="title" placeholder="Название" required minlength="2" maxlength="30">
+                    <span class="form__input-error title-input-error"></span>
+                </label>
+                <label class="form__label">
+                    <input class="form__input" type="url" id="url-input" name="url" placeholder="Ссылка на картинку" required>
+                    <span class="form__input-error url-input-error"></span>
+                </label>
                 <button class="form__button" type="submit">Сохранить</button>
             </form>
         </div>
