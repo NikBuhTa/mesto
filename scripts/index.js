@@ -42,10 +42,6 @@ function openPopup(element) {
 function closePopup(element) {
     element.classList.remove('popup_open');
     window.removeEventListener('keydown', closeHandlerButton);
-    const listInputs = Array.from(element.querySelectorAll('.form__input'));
-    listInputs.forEach((inputElement) => {
-        hideValidationError(element, inputElement, toValidate);
-    })
 }
 
 //Закрытие через клик по оверлею
@@ -117,6 +113,14 @@ const openPopupNewCard = () => {
     openPopup(popupElementCard);
     cardForm.reset();
     turnOffButtonForOpenPopupNewCard(cardForm, toValidate);
+    hideValidationErrorForOpenPopup(popupElementCard, toValidate);
+}
+
+const openPopupEditProfile = () => {
+    openPopup(popupElementEdit);
+    fillEditForm();
+    turnOnSubmitButton(popupElementEdit, toValidate);
+    hideValidationErrorForOpenPopup(popupElementEdit, toValidate);
 }
 
 const submitEditForm = (evt) => {
@@ -128,11 +132,7 @@ const submitEditForm = (evt) => {
 
 /* СЛУШАТЕЛИ */
 //Открытие попапа "Редактировать профиль"
-buttonOpenPopupEditProfile.addEventListener('click', function() {
-    openPopup(popupElementEdit);
-    fillEditForm();
-    turnOnSubmitButton(popupElementEdit, toValidate);
-});
+buttonOpenPopupEditProfile.addEventListener('click', openPopupEditProfile);
 //Закрытие попапа "Редактировать профиль"
 buttonClosePopupEditProfile.addEventListener('click', function() {
     closePopup(popupElementEdit);

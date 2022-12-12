@@ -3,6 +3,7 @@
     border-color:  rgb(0, 0, 0, .2);
     color: rgb(0, 0, 0, .5);
     border-style: solid;
+    cursor: default;
 }
 
 .form__button_unactive:hover {

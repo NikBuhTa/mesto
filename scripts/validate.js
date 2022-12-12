@@ -65,15 +65,22 @@ const toggleButtonState = (inputList, buttonElement, arr) => {
 };
 
 const turnOffButtonForOpenPopupNewCard = (formElement, arr) => {
-    const buttonElement = formElement.querySelector('.form__button');
+    const buttonElement = formElement.querySelector(`${arr.submitButtonSelector}`);
     buttonElement.classList.add(`${arr.inactiveButtonClass}`);
     buttonElement.setAttribute('disabled', true);
 }
 
 const turnOnSubmitButton = (formElement, arr) => {
-    const buttonElement = formElement.querySelector('.form__button');
+    const buttonElement = formElement.querySelector(`${arr.submitButtonSelector}`);
     buttonElement.classList.remove(`${arr.inactiveButtonClass}`);
     buttonElement.removeAttribute('disabled', true);
+}
+
+const hideValidationErrorForOpenPopup = (formElement, arr) => {
+    const listInputs = Array.from(formElement.querySelectorAll(`${arr.inputSelector}`));
+    listInputs.forEach((inputElement) => {
+        hideValidationError(formElement, inputElement, arr);
+    });
 }
 
 enableValidation(toValidate);
