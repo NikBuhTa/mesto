@@ -77,8 +77,8 @@ const turnOnSubmitButton = (formElement, arr) => {
 }
 
 const hideValidationErrorForOpenPopup = (formElement, arr) => {
-    const listInputs = Array.from(formElement.querySelectorAll(`${arr.inputSelector}`));
-    listInputs.forEach((inputElement) => {
+    const listInputsCurrentPopup = Array.from(formElement.querySelectorAll(`${arr.inputSelector}`));
+    listInputsCurrentPopup.forEach((inputElement) => {
         hideValidationError(formElement, inputElement, arr);
     });
 }
