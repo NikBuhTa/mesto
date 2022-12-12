@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="./pages/index.css">
     <link rel="icon" href="./images/icon.png">
     <title>Mesto</title>
-    <script src="./scripts/index.js" type="module"></script>
+    <script defer src="./scripts/index.js" type="module"></script>
     <script defer src="./scripts/validate.js"></script>
 </head>
 <body class="page">
@@ -35,7 +35,7 @@
     <footer class="footer">
         <p class="footer__text">&copy; 2022 Mesto Russia</p>
     </footer>
-    <section class="popup" id="aboutProfile">
+    <div class="popup" id="aboutProfile">
         <div class="popup__button-place">
             <button type="button" class="popup__button" aria-label="закрыть"></button>
         </div>
@@ -53,8 +53,8 @@
                 <button class="form__button" type="submit">Сохранить</button>
             </form>
         </div>
-    </section>
-    <section class="popup" id="newCard">
+    </div>
+    <div class="popup" id="newCard">
         <div class="popup__button-place">
             <button type="button" class="popup__button" aria-label="закрыть"></button>
         </div>
@@ -72,8 +72,8 @@
                 <button class="form__button" type="submit">Сохранить</button>
             </form>
         </div>
-    </section>
-    <section class="popup popup_opacity_image" id="fullCardImage">
+    </div>
+    <div class="popup popup_opacity_image" id="fullCardImage">
         <figure class="popup__image-container">
             <div class="popup__button-image">
                 <button type="button" class="popup__button" aria-label="закрыть"></button>
@@ -81,7 +81,7 @@
             <img class="popup__image" src="#" alt="#">
             <figcaption class="popup__subtitle"></figcaption>
         </figure>
-    </section>
+    </div>
     <template id="card">
         <li class="card">
             <img src="#" class="card__image" alt="#">

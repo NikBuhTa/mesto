@@ -64,4 +64,16 @@ const toggleButtonState = (inputList, buttonElement, arr) => {
     };
 };
 
+const turnOffButtonForOpenPopupNewCard = (formElement, arr) => {
+    const buttonElement = formElement.querySelector('.form__button');
+    buttonElement.classList.add(`${arr.inactiveButtonClass}`);
+    buttonElement.setAttribute('disabled', true);
+}
+
+const turnOnSubmitButton = (formElement, arr) => {
+    const buttonElement = formElement.querySelector('.form__button');
+    buttonElement.classList.remove(`${arr.inactiveButtonClass}`);
+    buttonElement.removeAttribute('disabled', true);
+}
+
 enableValidation(toValidate);
