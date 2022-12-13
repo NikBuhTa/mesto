@@ -31,7 +31,8 @@ const buttonOpenPopupNewCard = document.querySelector('.profile__button-add');
 const cardForm = popupElementCard.querySelector('.form');
 const buttonClosePopupNewCard = popupElementCard.querySelector('.popup__button');
 
-//ФУНКЦИИ
+ /* ФУНКЦИИ */
+
 //Функции закрытия и открытия попапов
 function openPopup(element) {
     element.classList.add('popup_open');
@@ -42,13 +43,14 @@ function openPopup(element) {
 function closePopup(element) {
     element.classList.remove('popup_open');
     window.removeEventListener('keydown', closeHandlerButton);
+    element.removeEventListener('click', clickHandlerOverlay);
 }
 
 //Закрытие через клик по оверлею
 const clickHandlerOverlay = (evt) => {
     if (evt.target === evt.currentTarget) {
         closePopup(document.querySelector('.popup_open'));
-    }
+    };
 }
 
 //закрытие через ESC
@@ -131,6 +133,7 @@ const submitEditForm = (evt) => {
 }
 
 /* СЛУШАТЕЛИ */
+
 //Открытие попапа "Редактировать профиль"
 buttonOpenPopupEditProfile.addEventListener('click', openPopupEditProfile);
 //Закрытие попапа "Редактировать профиль"
